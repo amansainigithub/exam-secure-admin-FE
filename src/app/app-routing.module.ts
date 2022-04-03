@@ -8,8 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthguardGuard } from './authGuard/authguard.guard';
+import { DashboardAdminComponent } from './pages/dashboard/dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'dashboard',canActivate:[AuthguardGuard],
         children: [
-        { path: '', component: DashboardComponent} 
+        { path: '', component: DashboardAdminComponent} 
         ]
   }
 ];

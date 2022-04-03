@@ -14,7 +14,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardAdminComponent } from './pages/dashboard/dashboard-admin/dashboard-admin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    DashboardComponent
+    DashboardAdminComponent
   ],
   imports: [
     BrowserModule,
