@@ -15,6 +15,28 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { DashboardAdminComponent } from './pages/dashboard/dashboard-admin/dashboard-admin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { FetchRootCategoryComponent } from './pages/category/root-category/fetch-root-category/fetch-root-category.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RootCategoryComponent } from './pages/category/root-category/root-category/root-category.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { UpdateRootCategoryComponent } from './pages/category/root-category/update-root-category/update-root-category.component';
+import { SubCategoryComponent } from './pages/category/sub-category/sub-category/sub-category.component';
+import { FetchSubCategoryComponent } from './pages/category/sub-category/fetch-sub-category/fetch-sub-category.component';
+import { UpdateSubCategoryComponent } from './pages/category/sub-category/update-sub-category/update-sub-category.component';
+import { BootomCategoryComponent } from './pages/category/bottom-category/bootom-category/bootom-category.component';
+import { FetchBootomCategoryComponent } from './pages/category/bottom-category/fetch-bootom-category/fetch-bootom-category.component';
+import { UpdateBootomCategoryComponent } from './pages/category/bottom-category/update-bootom-category/update-bootom-category.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +48,36 @@ import { DashboardAdminComponent } from './pages/dashboard/dashboard-admin/dashb
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    RootCategoryComponent,
+    FetchRootCategoryComponent,
+    UpdateRootCategoryComponent,
+    SubCategoryComponent,
+    FetchSubCategoryComponent,
+    UpdateSubCategoryComponent,
+    BootomCategoryComponent,
+    FetchBootomCategoryComponent,
+    UpdateBootomCategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatProgressBarModule,
+    MatCardModule,
+    MatTableModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

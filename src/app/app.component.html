@@ -1,6 +1,6 @@
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">EXAM-SECURE</a>
+  <nav class="navbar navbar-expand navbar-dark text-dark bg-primary">
+    <a href="#" class="navbar-brand " >EXAM-SECURE AD</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <!-- <li class="nav-item">
         <a href="/" class="nav-link" routerLink="home">Home </a>
@@ -9,10 +9,10 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="!tokenStorageService.isLoggedIn()">
       <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+        <a href="/register" class="nav-link colorText" routerLink="register">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
+        <a href="/login" class="nav-link colorText" routerLink="login">Login</a>
       </li>
     </ul>
 
@@ -26,7 +26,7 @@
     </ul>
   </nav>
 
-  <div class="container">
+  <div>
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -1,0 +1,92 @@
+<!-- PROGRESS BAR -->
+<div class="pB"  *ngIf="progressBar.dynamicValue" >
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+   </div>
+  
+  
+  
+  <div class="container mt-5">
+  
+      
+  
+      <div class="card mx-auto" style="max-width: 36rem;" >
+          <div class="card-header cardHeaderColor">
+              <i class="bi bi-grid-1x2-fill" style="color: #0000FF;"></i>
+              Create Bottom Category
+          </div>
+          <div class="card-body">
+  
+              <!-- FORM STARTING -->
+              <form  (ngSubmit)="createBottomCategory()" >
+                  <div class="form-row">
+  
+                    <div class="col-6">
+                      <label class="text-primary" >Bottom Category Name</label>
+                      <input type="text"
+                       class="form-control"
+                       [(ngModel)]="bottomCategoryForm.bottomCategoryName" name="bottomCategoryName"
+                        placeholder="Bottom Category Name">
+                    </div>
+  
+                    <div class="col">
+                      <label class="text-primary" >Default Name</label>
+                      <input type="text"
+                       class="form-control"
+                       [(ngModel)]="bottomCategoryForm.defaultName" name="defaultName"
+                        placeholder="default name">
+                    </div>
+                    
+                  </div>
+  
+                  <div class="form-row mt-3">
+                  <div class="col">
+                    <label class="text-primary" >Seq Name</label>
+                    <input type="text"
+                     class="form-control"
+                     [(ngModel)]="bottomCategoryForm.sequenceNum" name="sequenceNum"
+                      placeholder="Sequence">
+                  </div>
+                  </div>
+  
+  
+                  <div class="form-group mt-3">
+                      <label class="text-primary" >Short Description</label>
+                      <textarea class="form-control" 
+                      placeholder="short description" 
+                      [(ngModel)]="bottomCategoryForm.shortDescription" name="shortDescription"
+                      rows="3"></textarea>
+                    </div>
+  
+                    <div class="form-group mt-3">
+                      <label class="text-primary" >Long Description</label>
+                      <textarea class="form-control" 
+                       placeholder="Long description"
+                       [(ngModel)]="bottomCategoryForm.longDescription" name="longDescription"
+                        rows="3"></textarea>
+                    </div>
+  
+               
+  
+                    <div>
+                        <select class="custom-select" (change)="selectSubCategory($event)">
+                          <option selected disabled>Choose...</option>
+                          <option  [value]="node.id" *ngFor="let node of subCategoryList">
+                                  {{node.id}} = 
+                                  {{node.subCategoryName}}
+                          </option>
+                        </select>
+                      </div>
+  
+                    <div class="text-center mt-3">
+                      <button mat-raised-button color="primary">CREATE BOTTOM CATEGORY</button>
+                     </div>
+  
+  
+                </form>   
+                  <!-- FORM ENDING -->
+  
+  
+          </div>
+      </div>
+  
+  </div>
