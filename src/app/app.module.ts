@@ -37,6 +37,12 @@ import { UpdateSubCategoryComponent } from './pages/category/sub-category/update
 import { BootomCategoryComponent } from './pages/category/bottom-category/bootom-category/bootom-category.component';
 import { FetchBootomCategoryComponent } from './pages/category/bottom-category/fetch-bootom-category/fetch-bootom-category.component';
 import { UpdateBootomCategoryComponent } from './pages/category/bottom-category/update-bootom-category/update-bootom-category.component';
+import { BranchComponent } from './pages/category/branch/branch/branch.component';
+import { FetchBranchComponent } from './pages/category/branch/fetch-branch/fetch-branch.component';
+import { UpdateBranchComponent } from './pages/category/branch/update-branch/update-branch.component';
+import { ChapterComponent } from './pages/category/chapters/chapter/chapter.component';
+import { FetchChaptersComponent } from './pages/category/chapters/fetch-chapters/fetch-chapters.component';
+import { UpdateChapterComponent } from './pages/category/chapters/update-chapter/update-chapter.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +64,12 @@ import { UpdateBootomCategoryComponent } from './pages/category/bottom-category/
     BootomCategoryComponent,
     FetchBootomCategoryComponent,
     UpdateBootomCategoryComponent,
+    BranchComponent,
+    FetchBranchComponent,
+    UpdateBranchComponent,
+    ChapterComponent,
+    FetchChaptersComponent,
+    UpdateChapterComponent,
   ],
   imports: [
     BrowserModule,

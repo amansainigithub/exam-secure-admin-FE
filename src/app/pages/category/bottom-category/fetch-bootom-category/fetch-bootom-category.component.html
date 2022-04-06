@@ -25,7 +25,14 @@
         <tbody>
           <tr *ngFor="let node of bottomCategoryList; let i = index" >
             <th scope="row">{{node.id}}</th>
-            <td>{{node.bottomCategoryName}}</td>
+
+            <td>
+              {{node.bottomCategoryName}}
+              <p class="text-success" style="font-size: 11px;">
+                [{{node.subCategoryModel.subCategoryName}}]
+                </p>
+            </td>
+
             <td>{{node.defaultName}}</td>
             <td>{{node.shortDescription}}</td>
             <td>{{node.longDescription}}</td>

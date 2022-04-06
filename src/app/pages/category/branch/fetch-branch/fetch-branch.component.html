@@ -11,7 +11,7 @@
         <thead class="cardHeaderColor">
           <tr>
             <th scope="col">id</th>
-            <th scope="col">sub-category</th>
+            <th scope="col">branch</th>
             <th scope="col">default-name</th>
             <th scope="col">Short-Desc</th>
             <th scope="col">Long-Desc</th>
@@ -23,14 +23,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let node of fetchSubCategory; let i = index" >
-            <th scope="row">{{node.id}}</th>
+          <tr *ngFor="let node of branchList; let i = index" >
+            <th scope="row">{{node.id}} </th>
 
             <td>
-              {{node.subCategoryName}}
-              <p class="text-success" style="font-size: 11px;">
-                [{{node.rootCategoryModel.rootCategoryName}}]
-                </p>
+              {{node.branchName}}
+             <p class="text-success" style="font-size: 11px;">
+             [{{node.bottomCategoryModel.bottomCategoryName}}]
+             </p>
             </td>
 
             <td>{{node.defaultName}}</td>
@@ -45,15 +45,15 @@
             </td>
 
            <td>
-            <a mat-button  [routerLink]="'/dashboard/updateSubCategory/'+node.id" >
+            <a mat-button [routerLink]="'/dashboard/updateBranch/'+node.id"  >
               <i class="bi bi-pencil-square"  style="font-size: 18px;" ></i>
               Update
             </a>
            </td>
 
            <td>
-               <button mat-button  (click)="removeSubCategory(node.id)" >
-                <i class="bi bi-backspace-reverse-fill" style="color: #EA1025;" ></i> Remove
+               <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeBranchById(node.id)" >
+                <i class="bi bi-backspace-reverse-fill" ></i> Remove
             </button>
            </td>
 

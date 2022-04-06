@@ -45,19 +45,19 @@ bottomCategoryList:any;
   }
 
 
-  updateBottomCategory(id:any)
-  {
-   //console.log(id);
-   const dialogRef = this.dialog.open(UpdateBootomCategoryComponent,{
-    width: '650px',
-    data: {bottomCaegoryId: id},
-  });
+  // updateBottomCategory(id:any)
+  // {
+  //  //console.log(id);
+  //  const dialogRef = this.dialog.open(UpdateBootomCategoryComponent,{
+  //   width: '650px',
+  //   data: {bottomCaegoryId: id},
+  // });
 
-  dialogRef.afterClosed().subscribe(result => {
-    this.fetchBottomCategoryData();
-  });
+  // dialogRef.afterClosed().subscribe(result => {
+  //   this.fetchBottomCategoryData();
+  // });
     
-  }
+  // }
 
   removeBottomCategory(bottomCaegoryId:any)
   {
