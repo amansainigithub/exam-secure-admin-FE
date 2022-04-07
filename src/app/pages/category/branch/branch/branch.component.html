@@ -68,6 +68,7 @@
                
   
                     <div>
+                      <label class="text-primary" >Bottom</label>
                         <select class="custom-select" (change)="selectBottomCategory($event)">
                           <option selected disabled>Choose...</option>
                           <option  [value]="node.id" *ngFor="let node of bottomCategoryList">

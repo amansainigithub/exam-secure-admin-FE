@@ -34,4 +34,11 @@ export class BranchService {
     return this._http.delete(this._baseUrl.baseUrl+"deleteBranchById/"+branchId);
   }
 
+  getBranchListByBottomCategoryId(bottomCategoryId:any)
+  {
+    return this._http.get(this._baseUrl.baseUrl+"getBranchListByBottomCategoryId/"+bottomCategoryId);
+  }
+ 
+
+
 }

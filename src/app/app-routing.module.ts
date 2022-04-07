@@ -25,6 +25,11 @@ import { UpdateBranchComponent } from './pages/category/branch/update-branch/upd
 import { ChapterComponent } from './pages/category/chapters/chapter/chapter.component';
 import { FetchChaptersComponent } from './pages/category/chapters/fetch-chapters/fetch-chapters.component';
 import { UpdateChapterComponent } from './pages/category/chapters/update-chapter/update-chapter.component';
+import { QuestionSetComponent } from './pages/category/question-set/question-set/question-set.component';
+import { FetchQuestionSetComponent } from './pages/category/question-set/fetch-question-set/fetch-question-set.component';
+import { UpdateQuestionSetComponent } from './pages/category/question-set/update-question-set/update-question-set.component';
+import { FetchQuestionsWayComponent } from './pages/category/question-set/fetch-questions-way/fetch-questions-way.component';
+import { QuestionAnswerComponent } from './pages/category/question-answer/question-answer/question-answer.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -84,6 +89,21 @@ const routes: Routes = [
         },
         {
           path: 'updateChapter/:id', component: UpdateChapterComponent
+        },
+        {
+          path: 'questionSet', component: QuestionSetComponent
+        },
+        {
+          path: 'fetchQuestionSet', component: FetchQuestionSetComponent
+        },
+        {
+          path: 'updateQuestionSet/:id', component: UpdateQuestionSetComponent
+        },
+        {
+          path: 'fetchQuestionsWay', component: FetchQuestionsWayComponent
+        },
+        {
+          path: 'questionAnswer', component: QuestionAnswerComponent
         },
 
         

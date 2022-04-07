@@ -1,0 +1,87 @@
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        <div class="col-sm-3">
+            <div class="mt-3">
+                <label class="text-primary" >Bottom</label>
+                <select class="custom-select" (change)="selectBottomCategory($event)">
+                  <option selected disabled>Choose...</option>
+                  <option  [value]="node.id" *ngFor="let node of bottomCategoryList">
+                          {{node.id}} = 
+                          {{node.bottomCategoryName}}
+                  </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+                <div class="mt-3">
+                    <label class="text-primary" >Branch</label>
+                    <select class="custom-select" (change)="selectBranchCategory($event)" >
+                      <option selected disabled>Choose...</option>
+                      <option  [value]="node.id" *ngFor="let node of branchList">
+                              {{node.id}} = 
+                              {{node.branchName}}
+                      </option>
+                    </select>
+                </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="mt-3">
+                <label class="text-primary" >Chapters</label>
+                <select class="custom-select"   (change)="selectChapter($event)" >
+                  <option selected disabled>Choose...</option>
+                  <option  [value]="node.id" *ngFor="let node of chapterList">
+                          {{node.id}} = 
+                          {{node.chapterName}}
+                  </option>
+                </select>
+            </div>
+       </div>
+
+       <div class="col-sm-3">
+        <div class="mt-3">
+            <label class="text-primary" >Question-Set</label>
+            <select class="custom-select"  >
+              <option selected disabled>Choose...</option>
+              <option  [value]="node.id" *ngFor="let node of questionSetList">
+                      {{node.id}} = 
+                      {{node.questionSetName}}
+              </option>
+            </select>
+        </div>
+   </div>
+        <!-- PROGRESS BAR -->
+        <div class="pB"  *ngIf="progressBar.dynamicValue" >
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+
+
+    </div>
+    <!-- //ROW FINISH -->
+
+
+    <div class="container-fluid mt-5">
+
+        <div class="row">
+
+            <div class="col-sm-3" *ngFor="let node of questionSetList">
+                <div class="card" style="background-color: #FDEBD0;">
+                    <div class="card-body ">
+                      <a [routerLink]="'/dashboard/updateQuestionSet/'+node.id" >
+                        <p class="text-center text-dark">
+                            {{node.questionSetName}}
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

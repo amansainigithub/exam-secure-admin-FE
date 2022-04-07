@@ -35,4 +35,6 @@ export class BottomCategoryService {
   {
     return this._http.put(this._baseUrl.baseUrl+"updateBottomCategory",bottomCategoryForm);
   }
+
+ 
 }

@@ -68,6 +68,7 @@
                
   
                     <div>
+                      <label class="text-primary" >Branch</label>
                         <select class="custom-select" (change)="selectChapterId($event)">
                           <option selected disabled>Choose...</option>
                           <option  [value]="node.id" *ngFor="let node of branchList">

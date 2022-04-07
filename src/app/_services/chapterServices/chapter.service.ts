@@ -34,5 +34,10 @@ export class ChapterService {
     return this._http.put(this._baseUrl.baseUrl+"updateChapter",chapterForm);
   }
 
+  getChaptersByBranchId(branchId:any)
+  {
+    return this._http.get(this._baseUrl.baseUrl+"getChaptersByBranchId/"+branchId);
+  }
+
   
 }

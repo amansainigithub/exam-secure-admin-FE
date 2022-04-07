@@ -18,9 +18,8 @@ export class UpdateBranchComponent implements OnInit {
     branchId:any;
   ngOnInit(): void {
     this.branchId=this._activateRouter.snapshot.params.id;
-    console.log("***********");
-    
-    console.log(this.branchId);
+    //console.log("***********");
+   // console.log(this.branchId);
     
     //Fetch Bottom Category
     this.fetchBottomCategoryData();
