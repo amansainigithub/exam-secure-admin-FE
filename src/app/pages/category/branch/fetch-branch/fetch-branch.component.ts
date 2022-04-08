@@ -71,6 +71,38 @@ export class FetchBranchComponent implements OnInit {
     })
   }
 
+
+
+  //Change-Status
+  changeStatus(status:any,node:any)
+  {
+    //progress-bar-start
+    this.progressBarStart();
+    if(status == true){
+      node.status=false;
+      this.changeBranchStatus(node);
+    }
+    else if(status == false){
+      node.status=true;
+      this.changeBranchStatus(node);
+    }
+    //progress-bar-stop
+    this.progressBarStop();
+  }
+
+  //CHANGE-STATUS
+  changeBranchStatus(node:any)
+  {
+    this._branch.updatebranchService(node).subscribe(data=>{
+      this.getBranchList();
+    },error=>{
+      console.log(error);
+    })
+  }
+ 
+
+
+
    //PROGRESS BAR START_STOP
    progressBarStart()
    {

@@ -71,6 +71,38 @@ export class FetchChaptersComponent implements OnInit {
     })
   }
 
+
+
+  
+  //Change-Status
+  changeStatus(status:any,node:any)
+  {
+    //progress-bar-start
+    this.progressBarStart();
+    if(status == true){
+      node.status=false;
+      this.changeChapterStatus(node);
+    }
+    else if(status == false){
+      node.status=true;
+      this.changeChapterStatus(node);
+    }
+    //progress-bar-stop
+    this.progressBarStop();
+  }
+
+  //CHANGE-STATUS
+  changeChapterStatus(node:any)
+  {
+    this._chapter.updateChapter(node).subscribe(data=>{
+      this.getChaptersList();
+    },error=>{
+      console.log(error);
+    })
+  }
+ 
+
+
     //PROGRESS BAR START_STOP
     progressBarStart()
     {

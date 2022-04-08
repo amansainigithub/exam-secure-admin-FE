@@ -71,6 +71,35 @@ export class FetchQuestionSetComponent implements OnInit {
     })
   }
 
+
+  
+  //Change-Status
+  changeStatus(status:any,node:any)
+  {
+    //progress-bar-start
+    this.progressBarStart();
+    if(status == true){
+      node.status=false;
+      this.changeQuestionSetStatus(node);
+    }
+    else if(status == false){
+      node.status=true;
+      this.changeQuestionSetStatus(node);
+    }
+    //progress-bar-stop
+    this.progressBarStop();
+  }
+
+  //CHANGE-STATUS
+  changeQuestionSetStatus(node:any)
+  {
+    this._qss.updateQuestionSet(node).subscribe(data=>{
+      this.getAllQuestionSet();
+    },error=>{
+      console.log(error);
+    })
+  }
+
      //PROGRESS BAR START_STOP
      progressBarStart()
      {

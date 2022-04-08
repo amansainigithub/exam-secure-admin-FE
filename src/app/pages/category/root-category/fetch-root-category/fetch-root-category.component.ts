@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 import { MatDialog,MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { RootCategoryService } from 'src/app/_services/categoryServices/root-category.service';
 import Swal from 'sweetalert2';
@@ -22,6 +23,14 @@ export class FetchRootCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchRootCategoryData();
+  }
+
+  ok(status:any)
+  {
+    console.log("OKKK");
+    console.log(status);
+    
+    
   }
 
   fetchRootCategory:any;
@@ -89,6 +98,34 @@ export class FetchRootCategoryComponent implements OnInit {
 
   }
 
+
+  //Change-Status
+  changeStatus(status:any,node:any)
+  {
+    //progress-bar-start
+    this.progressBarStart();
+    if(status == true){
+      node.status=false;
+      this.changeRootCategoryStatus(node);
+    }
+    else if(status == false){
+      node.status=true;
+      this.changeRootCategoryStatus(node);
+    }
+    //progress-bar-stop
+    this.progressBarStop();
+  }
+
+  //CHANGE-STATUS
+  changeRootCategoryStatus(node:any)
+  {
+    this._rcs.updateRootCategoryService(node).subscribe(data=>{
+      this.fetchRootCategoryData();
+    },error=>{
+      console.log(error);
+      
+    })
+  }
 
 
   //PROGRESS BAR START_STOP

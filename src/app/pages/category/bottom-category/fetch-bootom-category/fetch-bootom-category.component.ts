@@ -91,6 +91,34 @@ bottomCategoryList:any;
     
   }
 
+
+
+   //Change-Status
+   changeStatus(status:any,node:any)
+   {
+     //progress-bar-start
+     this.progressBarStart();
+     if(status == true){
+       node.status=false;
+       this.changeBottomCategoryStatus(node);
+     }
+     else if(status == false){
+       node.status=true;
+       this.changeBottomCategoryStatus(node);
+     }
+     //progress-bar-stop
+     this.progressBarStop();
+   }
+ 
+   //CHANGE-STATUS
+   changeBottomCategoryStatus(node:any)
+   {
+     this._bcs.updateBottomCategoryService(node).subscribe(data=>{
+       this.fetchBottomCategoryData();
+     },error=>{
+       console.log(error);
+     })
+   }
   
   //PROGRESS BAR START_STOP
   progressBarStart()

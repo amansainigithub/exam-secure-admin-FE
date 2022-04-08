@@ -6,6 +6,8 @@
 
 <div class="container mt-5">
 
+  <button mat-button style="background-color: #AED6F1;" >CHAPTERS</button>
+
     <!-- TABLE STARTING -->
     <table class="table table-sm">
         <thead class="cardHeaderColor">
@@ -40,9 +42,9 @@
             <td>{{node.sequenceNum}}</td>
 
             <td>
-                <mat-slide-toggle></mat-slide-toggle>
-                <!-- {{node.status}} -->
-            </td>
+              <mat-slide-toggle [(ngModel)]="node.status" (click)="changeStatus(node.status,node)" ></mat-slide-toggle>
+              <!-- {{node.status}} -->
+          </td>
 
            <td>
             <a mat-button [routerLink]="'/dashboard/updateChapter/'+node.id"  >

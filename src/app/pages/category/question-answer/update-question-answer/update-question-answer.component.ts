@@ -106,7 +106,7 @@ export class UpdateQuestionAnswerComponent implements OnInit {
             //progress-bar-start
             this.progressBarStart();
   
-            this._qas.saveQuestionAnsersService(this.questionAnswerForm).subscribe(data=>{
+            this._qas.updateQuestionAnsersService(this.questionAnswerForm).subscribe(data=>{
               //console.log(data);
   
               //snack bar running..

@@ -89,6 +89,38 @@ export class FetchSubCategoryComponent implements OnInit {
   }
 
 
+
+
+   //Change-Status
+   changeStatus(status:any,node:any)
+   {
+     //progress-bar-start
+     this.progressBarStart();
+     if(status == true){
+       node.status=false;
+       this.changeSubCategoryStatus(node);
+     }
+     else if(status == false){
+       node.status=true;
+       this.changeSubCategoryStatus(node);
+     }
+     //progress-bar-stop
+     this.progressBarStop();
+   }
+ 
+   //CHANGE-STATUS
+   changeSubCategoryStatus(node:any)
+   {
+     this._scs.updateSubCategoryService(node).subscribe(data=>{
+       this.fetchSubCategoryData();
+     },error=>{
+       console.log(error);
+     })
+   }
+ 
+ 
+
+
     //PROGRESS BAR START_STOP
     progressBarStart()
     {

@@ -71,6 +71,35 @@ export class FetchQuestionAnswerComponent implements OnInit {
   }
 
 
+
+  //Change-Status
+  changeStatus(status:any,node:any)
+  {
+    //progress-bar-start
+    this.progressBarStart();
+    if(status == true){
+      node.status=false;
+      this.changeQuestionAnswerStatus(node);
+    }
+    else if(status == false){
+      node.status=true;
+      this.changeQuestionAnswerStatus(node);
+    }
+    //progress-bar-stop
+    this.progressBarStop();
+  }
+
+  //CHANGE-STATUS
+  changeQuestionAnswerStatus(node:any)
+  {
+    this._qas.saveQuestionAnsersService(node).subscribe(data=>{
+      this.getAllQuestionAnswer();
+    },error=>{
+      console.log(error);
+    })
+  }
+
+
    //PROGRESS BAR START_STOP
    progressBarStart()
    {

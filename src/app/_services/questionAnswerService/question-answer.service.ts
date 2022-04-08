@@ -33,7 +33,7 @@ export class QuestionAnswerService {
 
   updateQuestionAnsersService(queationAnswerForm:any)
   {
-    return this._http.post(this._baseUrl.baseUrl+"updateBottomCategory",queationAnswerForm);
+    return this._http.put(this._baseUrl.baseUrl+"updateQuestionAnswer",queationAnswerForm);
   }
 
   getQuestionAnswerByQuestionSetId(id:any)
