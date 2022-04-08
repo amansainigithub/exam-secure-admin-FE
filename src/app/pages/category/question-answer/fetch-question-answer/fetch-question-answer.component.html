@@ -29,9 +29,40 @@
             <th scope="row">{{node.id}} </th>
 
             <td>
-             <p class="text-success" style="font-size: 12px;">
-                {{node.question}}
-             </p>
+              <p  style="font-size: 12px;">
+                  {{node.question}}
+              </p>
+
+              <span class="text-success" style="font-size: 11px;color: #34495E;">
+                <i class="bi bi-book-fill"></i>
+                [{{node.questionSetsModel.questionSetName}}]
+              </span>
+
+              <span class="text-success" style="font-size: 11px;color: #34495E;">
+                <i class="bi bi-book-fill"></i>
+                [{{node.questionSetsModel.chaptersModel.chapterName}}]
+              </span>
+
+              <span class="text-success" style="font-size: 11px;color: #34495E;">
+                <i class="bi bi-book-fill"></i>
+                [{{node.questionSetsModel.chaptersModel.branchModel.branchName}}]
+              </span>
+
+              <span class="text-success" style="font-size: 11px;color: #34495E;">
+                <i class="bi bi-book-fill"></i>
+                [{{node.questionSetsModel.chaptersModel.branchModel.bottomCategoryModel.bottomCategoryName}}]
+              </span>
+
+              <span class="text-success" style="font-size: 11px;color: #34495E;">
+                <i class="bi bi-book-fill"></i>
+                [{{node.questionSetsModel.chaptersModel.branchModel.bottomCategoryModel.subCategoryModel.subCategoryName}}]
+              </span>
+
+              <span class="text-success" style="font-size: 11px;color: #34495E;">
+                <i class="bi bi-book-fill"></i>
+                [{{node.questionSetsModel.chaptersModel.branchModel.bottomCategoryModel.subCategoryModel.rootCategoryModel.rootCategoryName}}]
+              </span>
+
             </td>
 
             <td>{{node.ansKey}}</td>
