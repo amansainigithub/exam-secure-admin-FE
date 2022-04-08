@@ -2,8 +2,34 @@
 
     <div class="row">
 
+      <div class="col-sm-2">
+        <div class="mt-3">
+            <label class="text-primary" >ROOT CATEGORY</label>
+            <select class="custom-select" (change)="selectRootCategory($event)">
+              <option selected disabled>Choose...</option>
+              <option  [value]="node.id" *ngFor="let node of fetchRootCategory">
+                      {{node.id}} = 
+                      {{node.rootCategoryName}}
+              </option>
+            </select>
+        </div>
+    </div>
 
-        <div class="col-sm-3">
+          <div class="col-sm-2">
+            <div class="mt-3">
+                <label class="text-primary" >SUB CATEGORY</label>
+                <select class="custom-select"  (change)="selectSubCategory($event)" >
+                  <option selected disabled>Choose...</option>
+                  <option  [value]="node.id" *ngFor="let node of subCategoryList">
+                          {{node.id}} = 
+                          {{node.subCategoryName}}
+                  </option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="col-sm-2">
             <div class="mt-3">
                 <label class="text-primary" >Bottom</label>
                 <select class="custom-select" (change)="selectBottomCategory($event)">
@@ -16,7 +42,7 @@
             </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-2">
                 <div class="mt-3">
                     <label class="text-primary" >Branch</label>
                     <select class="custom-select" (change)="selectBranchCategory($event)" >
@@ -29,7 +55,7 @@
                 </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <div class="mt-3">
                 <label class="text-primary" >Chapters</label>
                 <select class="custom-select"   (change)="selectChapter($event)" >
@@ -42,18 +68,18 @@
             </div>
        </div>
 
-       <div class="col-sm-3">
-        <div class="mt-3">
-            <label class="text-primary" >Question-Set</label>
-            <select class="custom-select"  >
-              <option selected disabled>Choose...</option>
-              <option  [value]="node.id" *ngFor="let node of questionSetList">
-                      {{node.id}} = 
-                      {{node.questionSetName}}
-              </option>
-            </select>
-        </div>
-   </div>
+          <div class="col-sm-2">
+            <div class="mt-3">
+                <label class="text-primary" >Question-Set</label>
+                <select class="custom-select"   (change)="selectQuestionSet($event)">
+                  <option selected >Choose...</option>
+                  <option  [value]="node.id" *ngFor="let node of questionSetList">
+                          {{node.id}} = 
+                          {{node.questionSetName}}
+                  </option>
+                </select>
+            </div>
+      </div>
         <!-- PROGRESS BAR -->
         <div class="pB"  *ngIf="progressBar.dynamicValue" >
             <mat-progress-bar mode="indeterminate"></mat-progress-bar>
@@ -71,7 +97,7 @@
             <div class="col-sm-3" *ngFor="let node of questionSetList">
                 <div class="card" style="background-color: #FDEBD0;">
                     <div class="card-body ">
-                      <a [routerLink]="'/dashboard/updateQuestionSet/'+node.id" >
+                      <a target="_blank" [routerLink]="'/dashboard/updateQuestionSet/'+node.id" >
                         <p class="text-center text-dark">
                             {{node.questionSetName}}
                         </p>
@@ -83,5 +109,39 @@
         </div>
 
     </div>
+
+
+    <!-- Question Answer List -->
+  
+    <div class="container-fluid mt-5">
+      <hr>
+
+      <div class="row">
+
+          <div class="col-sm-3" *ngFor="let node of questionAnswerList">
+              <div class="card mt-4" style="background-color: #EAFAF1;">
+                  <div class="card-body ">
+                    
+                    <a target="_blank" [routerLink]="'/dashboard/updateQuestionSet/'+node.id" >
+                      <p class="text-dark">
+                          <b>Q.</b>
+                          <span class="mr-2">{{node.question}}</span>
+                      </p>
+                    </a>
+
+                    <a mat-raised-button target="_blank" style="background-color: #58D68D;"
+                     [routerLink]="'/dashboard/updateQuestionAnswer/'+node.id">
+                    updateQuestion
+                    </a>
+
+                  </div>
+                </div>
+          </div>
+
+      </div>
+
+  </div>
+      <!-- Question Answer List /////-->
+
 
 </div>

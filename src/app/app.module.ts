@@ -48,6 +48,8 @@ import { FetchQuestionSetComponent } from './pages/category/question-set/fetch-q
 import { UpdateQuestionSetComponent } from './pages/category/question-set/update-question-set/update-question-set.component';
 import { FetchQuestionsWayComponent } from './pages/category/question-set/fetch-questions-way/fetch-questions-way.component';
 import { QuestionAnswerComponent } from './pages/category/question-answer/question-answer/question-answer.component';
+import { FetchQuestionAnswerComponent } from './pages/category/question-answer/fetch-question-answer/fetch-question-answer.component';
+import { UpdateQuestionAnswerComponent } from './pages/category/question-answer/update-question-answer/update-question-answer.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,8 @@ import { QuestionAnswerComponent } from './pages/category/question-answer/questi
     UpdateQuestionSetComponent,
     FetchQuestionsWayComponent,
     QuestionAnswerComponent,
+    FetchQuestionAnswerComponent,
+    UpdateQuestionAnswerComponent,
   ],
   imports: [
     BrowserModule,

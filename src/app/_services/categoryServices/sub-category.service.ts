@@ -35,4 +35,10 @@ export class SubCategoryService {
   {
     return this._http.put(this._baseUrl.baseUrl+"updateSubCategory/",subCategoryForm);
   }
+
+  getSubCategoriesByRootCategoryId(rootCategoryId:any)
+  {
+    return this._http.get(this._baseUrl.baseUrl+"getSubCategoriesByRootCategoryId/"+rootCategoryId);
+  }
+  
 }

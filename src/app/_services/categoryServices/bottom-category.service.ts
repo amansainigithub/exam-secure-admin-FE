@@ -36,5 +36,10 @@ export class BottomCategoryService {
     return this._http.put(this._baseUrl.baseUrl+"updateBottomCategory",bottomCategoryForm);
   }
 
+
+  getBottomCategoriesBySubCategoryId(subCategoryId:any)
+  {
+    return this._http.get(this._baseUrl.baseUrl+"getBottomCategoriesBySubCategoryId/"+subCategoryId);
+  }
  
 }
