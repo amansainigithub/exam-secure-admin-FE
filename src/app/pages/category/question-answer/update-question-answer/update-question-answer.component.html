@@ -139,6 +139,17 @@
 
                   <!-- ANSWER -->
                   <div  class="mt-4 border border-dark rounded p-3">
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1" class="text-success font-weight-bolder">Option Name KEY</label>
+                      <select   class="form-control" (click)="selectAnswerKeyOption($event)">
+                        <option value="questionAnswerForm.ansNameKey">{{questionAnswerForm.ansNameKey}} [SELECTED]</option>
+                        <option [value]="node" *ngFor="let node of ansKeyOptionList">
+                          {{node}}
+                        </option>
+                      </select>
+                    </div>
+
                     <label class="font-weight-bolder" >Answer</label>
                     <div >
                       <input type="text"

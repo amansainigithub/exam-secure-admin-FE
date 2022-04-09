@@ -25,6 +25,8 @@ export class UpdateQuestionAnswerComponent implements OnInit {
       private _scs:SubCategoryService,
       private _qas:QuestionAnswerService) { }
 
+      ansKeyOptionList:any = ["a", "b", "c","d"];
+
   questionAnswerid:any;  
   ngOnInit(): void {
 
@@ -96,8 +98,24 @@ export class UpdateQuestionAnswerComponent implements OnInit {
     this.selectQuestionSetid = e.target.value;
   }
 
+selectAnswerKeyOptionValue:any;
+  selectAnswerKeyOption(e:any)
+{
+  this.selectAnswerKeyOptionValue = e.target.value;
+}
+
   updateQuestionAnswer()
   {
+
+    if(this.selectAnswerKeyOptionValue == null || this.selectAnswerKeyOptionValue == '')
+    {
+       //snack bar running..
+       this._shs.OpenSnackbar_horizontalPosition_start("Please Select Answer Key","close",2000);
+       return;
+    }
+    //putting Answer Kry
+    this.questionAnswerForm.ansNameKey = this.selectAnswerKeyOptionValue;
+    
   
     this.questionAnswerForm.questionSetsModel.id = this.selectQuestionSetid;
   
