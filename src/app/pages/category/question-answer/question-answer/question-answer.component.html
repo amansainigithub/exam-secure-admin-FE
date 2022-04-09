@@ -151,7 +151,7 @@
                               <label class="text-primary font-weight-bolder" >Option 1</label>
                               <input type="text"
                               class="form-control"
-                              [(ngModel)]="questionAnswerForm.option1" name="option1"
+                              [(ngModel)]="questionAnswerForm.option1" name="option1" 
                                 placeholder="option 1">
                             </div>
 
@@ -186,7 +186,19 @@
 
                   <!-- ANSWER -->
                   <div  class="mt-4 border border-dark rounded p-3">
-                    <label class="font-weight-bolder" >Answer</label>
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1" class="text-success font-weight-bolder">Option Name</label>
+                      <select   class="form-control" (click)="selectAnswerNameKey($event)">
+                        <option value="" selected disabled>Choose...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                      </select>
+                    </div>
+
+                    <label class="font-weight-bolder text-success" >Answer</label>
                     <div >
                       <input type="text"
                       class="form-control"

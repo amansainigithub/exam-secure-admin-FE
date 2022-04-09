@@ -209,6 +209,7 @@ export class QuestionAnswerComponent implements OnInit {
     "questionSetCloneId":"",
     "description": "",
     "solution":"",
+    "ansKeyName":"",
     "questionSetsModel":{
       "id":""
     },
@@ -220,10 +221,26 @@ selectQuestionSet(e:any)
   this.selectedQuestionSetId = e.target.value;
 }
 
+selectAnswerNameKeyValue:any;
+selectAnswerNameKey(e:any)
+{
+  this.selectAnswerNameKeyValue = e.target.value;
+}
+
   createQuestionAnswer()
   {
-    console.log(this.questionAnswerForm);
+    
+    if(this.selectAnswerNameKeyValue == null || this.selectAnswerNameKeyValue == '')
+    {
+       //snack bar running..
+       this._shs.OpenSnackbar_horizontalPosition_start("Please Select Answer Key","close",2000);
+       return;
+    }
+
+    //putting Answer Kry
+    this.questionAnswerForm.ansNameKey = this.selectAnswerNameKeyValue;
   
+    //Selecting Question-set
     this.questionAnswerForm.questionSetsModel.id = this.selectedQuestionSetId;
     this.questionAnswerForm.questionSetCloneId = this.selectedQuestionSetId;
   
