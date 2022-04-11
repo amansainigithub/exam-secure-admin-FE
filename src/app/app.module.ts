@@ -50,6 +50,7 @@ import { FetchQuestionsWayComponent } from './pages/category/question-set/fetch-
 import { QuestionAnswerComponent } from './pages/category/question-answer/question-answer/question-answer.component';
 import { FetchQuestionAnswerComponent } from './pages/category/question-answer/fetch-question-answer/fetch-question-answer.component';
 import { UpdateQuestionAnswerComponent } from './pages/category/question-answer/update-question-answer/update-question-answer.component';
+import { UploadFileRootCategoryComponent } from './pages/category/root-category/upload-file-root-category/upload-file-root-category.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { UpdateQuestionAnswerComponent } from './pages/category/question-answer/
     QuestionAnswerComponent,
     FetchQuestionAnswerComponent,
     UpdateQuestionAnswerComponent,
+    UploadFileRootCategoryComponent,
   ],
   imports: [
     BrowserModule,

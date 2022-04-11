@@ -4,6 +4,7 @@ import { MatDialog,MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { RootCategoryService } from 'src/app/_services/categoryServices/root-category.service';
 import Swal from 'sweetalert2';
 import { UpdateRootCategoryComponent } from '../update-root-category/update-root-category.component';
+import { UploadFileRootCategoryComponent } from '../upload-file-root-category/upload-file-root-category.component';
 
 @Component({
   selector: 'app-fetch-root-category',
@@ -89,6 +90,19 @@ export class FetchRootCategoryComponent implements OnInit {
     //console.log(id);
     const dialogRef = this.dialog.open(UpdateRootCategoryComponent,{
       width: '650px',
+      data: {rootCategoryId: id},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.fetchRootCategoryData();
+    });
+
+  }
+
+  uploadFileRootCategory(id:any) {
+    //console.log(id);
+    const dialogRef = this.dialog.open(UploadFileRootCategoryComponent,{
+      width: '400px',
       data: {rootCategoryId: id},
     });
 

@@ -35,4 +35,13 @@ export class RootCategoryService {
   {
     return this._http.put(this._baseUrl.baseUrl+"updateRootCategory/",rootCategoryForm);
   }
+
+  root_upload_file_service(file:any,id:any)
+  {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+
+    var url=this._baseUrl.baseUrl+"uploadRootCategoryFile/"+id;
+    return this._http.post(url,formData);
+  }
 }
