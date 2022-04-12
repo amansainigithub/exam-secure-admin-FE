@@ -40,5 +40,14 @@ export class SubCategoryService {
   {
     return this._http.get(this._baseUrl.baseUrl+"getSubCategoriesByRootCategoryId/"+rootCategoryId);
   }
+
+  sub_upload_file_service(file:any,id:any)
+  {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+
+    var url=this._baseUrl.baseUrl+"uploadSubCategoryFile/"+id;
+    return this._http.post(url,formData);
+  }
   
 }

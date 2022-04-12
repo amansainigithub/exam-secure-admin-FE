@@ -39,6 +39,14 @@ export class BranchService {
     return this._http.get(this._baseUrl.baseUrl+"getBranchListByBottomCategoryId/"+bottomCategoryId);
   }
  
+  branch_upload_file_service(file:any,id:any)
+  {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+
+    var url=this._baseUrl.baseUrl+"uploadBranchCategoryFile/"+id;
+    return this._http.post(url,formData);
+  }
 
 
 }

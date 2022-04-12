@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { QuestionSetService } from 'src/app/_services/questionSetServices/question-set.service';
 import Swal from 'sweetalert2';
+import { UploadFileQuestionSetComponent } from '../upload-file-question-set/upload-file-question-set.component';
 
 @Component({
   selector: 'app-fetch-question-set',
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class FetchQuestionSetComponent implements OnInit {
 
-  constructor(private _qss:QuestionSetService) {
+  constructor(private _qss:QuestionSetService,public dialog: MatDialog) {
   }
 
   progressBar:any ={
@@ -99,6 +101,22 @@ export class FetchQuestionSetComponent implements OnInit {
       console.log(error);
     })
   }
+
+
+
+  //UPLOAD FILE
+ uploadFileQuestionSet(id:any) {
+  //console.log(id);
+  const dialogRef = this.dialog.open(UploadFileQuestionSetComponent,{
+    width: '400px',
+    data: {questionSetId: id},
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    this.getAllQuestionSet();
+  });
+
+}
 
      //PROGRESS BAR START_STOP
      progressBarStart()

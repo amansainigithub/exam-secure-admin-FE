@@ -1,0 +1,25 @@
+<div class="container">
+
+        <!-- PROGRESS BAR -->
+        <div class="pB mb-3"  *ngIf="progressBar.dynamicValue" >
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+           </div>
+    
+
+    <div class="mx-auto">
+
+        <form >
+            <div class="form-group">
+              <div class="text-center">
+                <input multiple (change)="selectFile($event) "type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+              <br>
+              <div class="text-center">
+                <button (click)="uploadFile()" mat-raised-button color="primary">UPLOAD</button>
+              </div>
+            </div>
+          </form>
+
+    </div>
+
+</div>

@@ -39,5 +39,14 @@ export class ChapterService {
     return this._http.get(this._baseUrl.baseUrl+"getChaptersByBranchId/"+branchId);
   }
 
+  chapter_upload_file_service(file:any,id:any)
+  {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+
+    var url=this._baseUrl.baseUrl+"uploadChapterFile/"+id;
+    return this._http.post(url,formData);
+  }
+
   
 }

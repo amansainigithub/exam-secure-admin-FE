@@ -33,6 +33,7 @@ import { QuestionAnswerComponent } from './pages/category/question-answer/questi
 import { FetchQuestionAnswerComponent } from './pages/category/question-answer/fetch-question-answer/fetch-question-answer.component';
 import { UpdateQuestionAnswerComponent } from './pages/category/question-answer/update-question-answer/update-question-answer.component';
 import { UploadFileRootCategoryComponent } from './pages/category/root-category/upload-file-root-category/upload-file-root-category.component';
+import { UploadQuestionFilesComponent } from './pages/category/questions-files/upload-question-files/upload-question-files.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -117,6 +118,9 @@ const routes: Routes = [
         {
           path: 'uploadRootCategoryFile', component: UploadFileRootCategoryComponent
         },
+        {
+          path: 'uploadQuestionFiles/:id', component: UploadQuestionFilesComponent 
+        }
 
         
         ]

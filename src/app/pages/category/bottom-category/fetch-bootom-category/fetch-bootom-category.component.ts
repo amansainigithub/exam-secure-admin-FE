@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BottomCategoryService } from 'src/app/_services/categoryServices/bottom-category.service';
 import Swal from 'sweetalert2';
 import { UpdateBootomCategoryComponent } from '../update-bootom-category/update-bootom-category.component';
+import { UploadFileBottomCategoryComponent } from '../upload-file-bottom-category/upload-file-bottom-category.component';
 
 
 @Component({
@@ -45,19 +46,7 @@ bottomCategoryList:any;
   }
 
 
-  // updateBottomCategory(id:any)
-  // {
-  //  //console.log(id);
-  //  const dialogRef = this.dialog.open(UpdateBootomCategoryComponent,{
-  //   width: '650px',
-  //   data: {bottomCaegoryId: id},
-  // });
 
-  // dialogRef.afterClosed().subscribe(result => {
-  //   this.fetchBottomCategoryData();
-  // });
-    
-  // }
 
   removeBottomCategory(bottomCaegoryId:any)
   {
@@ -119,6 +108,26 @@ bottomCategoryList:any;
        console.log(error);
      })
    }
+
+
+
+
+//UPLOAD FILE
+uploadFileBottomCategory(id:any) {
+  //console.log(id);
+  const dialogRef = this.dialog.open(UploadFileBottomCategoryComponent,{
+    width: '400px',
+    data: {bottomcategoryId: id},
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    this.fetchBottomCategoryData();
+  });
+
+}
+
+
+
   
   //PROGRESS BAR START_STOP
   progressBarStart()

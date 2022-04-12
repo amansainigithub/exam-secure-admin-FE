@@ -20,6 +20,8 @@
             <th scope="col">DT</th>
             <th scope="col">seq-num</th>
             <th scope="col">status</th>
+            <th scope="col">File</th>
+            <th scope="col">upload_FILE</th>
             <th scope="col">update</th>
             <th scope="col">remove</th>
           </tr>
@@ -46,22 +48,39 @@
               <!-- {{node.status}} -->
           </td>
 
-           <td>
-            <a mat-button  [routerLink]="'/dashboard/updateSubCategory/'+node.id" >
-              <i class="bi bi-pencil-square"  style="font-size: 18px;" ></i>
-              Update
-            </a>
-           </td>
+              <td>
+                <div  *ngIf="node.fileUrl != '' ">
+                  <img src="{{node.fileUrl}}"  alt="File" height="50">
+                </div>
 
-           <td>
-               <button mat-button  (click)="removeSubCategory(node.id)" >
-                <i class="bi bi-backspace-reverse-fill" style="color: #EA1025;" ></i> Remove
-            </button>
-           </td>
+                <div *ngIf="node.fileUrl == ''">
+                  <i class="bi bi-image-fill" style="color: #FFBF00;"></i >
+                </div>
+              </td>
 
-          </tr>
-        </tbody>
-      </table>
+              <td>
+                <button mat-raised-button class="uploadFile" (click)="uploadFileSubCategory(node.id)" >
+                  <i class="bi bi-camera-fill"   style="font-size: 18px;" ></i>
+                  uploadFile
+                </button>
+              </td>
+
+                  <td>
+                    <a mat-button  [routerLink]="'/dashboard/updateSubCategory/'+node.id" >
+                      <i class="bi bi-pencil-square"  style="font-size: 18px;" ></i>
+                      Update
+                    </a>
+                  </td>
+
+                  <td>
+                      <button mat-button  (click)="removeSubCategory(node.id)" >
+                        <i class="bi bi-backspace-reverse-fill" style="color: #EA1025;" ></i> Remove
+                    </button>
+                  </td>
+
+                  </tr>
+                </tbody>
+            </table>
       
       <!-- TABLE ENDING -->
 

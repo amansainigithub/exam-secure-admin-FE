@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { BranchService } from 'src/app/_services/branchServices/branch.service';
 import Swal from 'sweetalert2';
+import { UploadFileBranchComponent } from '../upload-file-branch/upload-file-branch.component';
 
 
 @Component({
@@ -10,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class FetchBranchComponent implements OnInit {
 
-  constructor(private _branch:BranchService) {
+  constructor(private _branch:BranchService,public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -100,6 +102,21 @@ export class FetchBranchComponent implements OnInit {
     })
   }
  
+
+
+  //UPLOAD FILE
+  uploadFileBranch(id:any) {
+  //console.log(id);
+  const dialogRef = this.dialog.open(UploadFileBranchComponent,{
+    width: '400px',
+    data: {branchId: id},
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    this.getBranchList();
+  });
+
+}
 
 
 

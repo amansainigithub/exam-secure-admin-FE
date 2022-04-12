@@ -22,6 +22,7 @@
             <th scope="col">option-3</th>
             <th scope="col">option-2</th>
             <th scope="col">status</th>
+            <th scope="col">Upload_Files</th>
             <th scope="col">seqNum</th>
             <th scope="col">update</th>
             <th scope="col">remove</th>
@@ -78,6 +79,15 @@
             <td>
               <mat-slide-toggle [(ngModel)]="node.status" (click)="changeStatus(node.status,node)" ></mat-slide-toggle>
               <!-- {{node.status}} -->
+          </td>
+
+          <td>
+            <div class="text-center">
+              <i class="bi bi-camera-fill"   style="font-size: 16px;color: #F7DC6F;" ></i><br>
+              <a  [routerLink]="'/dashboard/uploadQuestionFiles/'+node.id">
+                <span style="font-size: 14px;color: #2C3E50;font-weight: 600;">upload-Files</span>
+               </a>
+            </div>
           </td>
 
             <td>{{node.sequenceNum}}</td>

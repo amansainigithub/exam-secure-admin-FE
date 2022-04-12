@@ -51,6 +51,12 @@ import { QuestionAnswerComponent } from './pages/category/question-answer/questi
 import { FetchQuestionAnswerComponent } from './pages/category/question-answer/fetch-question-answer/fetch-question-answer.component';
 import { UpdateQuestionAnswerComponent } from './pages/category/question-answer/update-question-answer/update-question-answer.component';
 import { UploadFileRootCategoryComponent } from './pages/category/root-category/upload-file-root-category/upload-file-root-category.component';
+import { UploadFileSubCategoryComponent } from './pages/category/sub-category/upload-file-sub-category/upload-file-sub-category.component';
+import { UploadFileBottomCategoryComponent } from './pages/category/bottom-category/upload-file-bottom-category/upload-file-bottom-category.component';
+import { UploadFileBranchComponent } from './pages/category/branch/upload-file-branch/upload-file-branch.component';
+import { UploadFileChapterComponent } from './pages/category/chapters/upload-file-chapter/upload-file-chapter.component';
+import { UploadFileQuestionSetComponent } from './pages/category/question-set/upload-file-question-set/upload-file-question-set.component';
+import { UploadQuestionFilesComponent } from './pages/category/questions-files/upload-question-files/upload-question-files.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +92,12 @@ import { UploadFileRootCategoryComponent } from './pages/category/root-category/
     FetchQuestionAnswerComponent,
     UpdateQuestionAnswerComponent,
     UploadFileRootCategoryComponent,
+    UploadFileSubCategoryComponent,
+    UploadFileBottomCategoryComponent,
+    UploadFileBranchComponent,
+    UploadFileChapterComponent,
+    UploadFileQuestionSetComponent,
+    UploadQuestionFilesComponent,
   ],
   imports: [
     BrowserModule,

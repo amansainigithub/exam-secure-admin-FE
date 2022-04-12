@@ -20,6 +20,8 @@
             <th scope="col">DT</th>
             <th scope="col">seq-num</th>
             <th scope="col">status</th>
+            <th scope="col">File</th>
+            <th scope="col">upload_FILE</th>
             <th scope="col">update</th>
             <th scope="col">remove</th>
           </tr>
@@ -45,6 +47,24 @@
               <mat-slide-toggle [(ngModel)]="node.status" (click)="changeStatus(node.status,node)" ></mat-slide-toggle>
               <!-- {{node.status}} -->
           </td>
+
+          <td>
+            <div  *ngIf="node.fileUrl != '' ">
+              <img src="{{node.fileUrl}}"  alt="File" height="50">
+            </div>
+
+            <div *ngIf="node.fileUrl == ''">
+              <i class="bi bi-image-fill" style="color: #FFBF00;"></i >
+            </div>
+        </td>
+
+          <td>
+            <button mat-raised-button class="uploadFile" (click)="uploadFileChapter(node.id)" >
+              <i class="bi bi-camera-fill"   style="font-size: 18px;" ></i>
+              uploadFile
+            </button>
+           </td>
+
 
            <td>
             <a mat-button [routerLink]="'/dashboard/updateChapter/'+node.id"  >

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SubCategoryService } from 'src/app/_services/categoryServices/sub-category.service';
 import Swal from 'sweetalert2';
 import { UpdateSubCategoryComponent } from '../update-sub-category/update-sub-category.component';
+import { UploadFileSubCategoryComponent } from '../upload-file-sub-category/upload-file-sub-category.component';
 
 @Component({
   selector: 'app-fetch-sub-category',
@@ -89,7 +90,19 @@ export class FetchSubCategoryComponent implements OnInit {
   }
 
 
+   //UPLOAD FILE
+   uploadFileSubCategory(id:any) {
+    //console.log(id);
+    const dialogRef = this.dialog.open(UploadFileSubCategoryComponent,{
+      width: '400px',
+      data: {subCategoryId: id},
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.fetchSubCategoryData();
+    });
+
+  }
 
    //Change-Status
    changeStatus(status:any,node:any)

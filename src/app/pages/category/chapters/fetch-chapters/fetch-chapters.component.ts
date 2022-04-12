@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ChapterService } from 'src/app/_services/chapterServices/chapter.service';
 import Swal from 'sweetalert2';
+import { UploadFileChapterComponent } from '../upload-file-chapter/upload-file-chapter.component';
 
 @Component({
   selector: 'app-fetch-chapters',
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class FetchChaptersComponent implements OnInit {
 
-  constructor(private _chapter:ChapterService) {
+  constructor(private _chapter:ChapterService,public dialog: MatDialog) {
   }
 
   progressBar:any ={
@@ -101,6 +103,21 @@ export class FetchChaptersComponent implements OnInit {
     })
   }
  
+
+
+  //UPLOAD FILE
+ uploadFileChapter(id:any) {
+  //console.log(id);
+  const dialogRef = this.dialog.open(UploadFileChapterComponent,{
+    width: '400px',
+    data: {chapterId: id},
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    this.getChaptersList();
+  });
+
+}
 
 
     //PROGRESS BAR START_STOP

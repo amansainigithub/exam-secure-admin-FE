@@ -40,5 +40,12 @@ export class QuestionSetService {
     return this._http.get(this._baseUrl.baseUrl+"getQuestionSetByChapterId/"+chapterId);
   }
 
+questionSet_upload_file_service(file:any,id:any)
+  {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
 
+    var url=this._baseUrl.baseUrl+"uploadQuestionSetFile/"+id;
+    return this._http.post(url,formData);
+  }
 }
