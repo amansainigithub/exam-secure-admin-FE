@@ -33,4 +33,13 @@ export class QuestionFilesService {
   }
 
 
+  update_question_file_upload_service(file:any,id:any)
+  {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+
+    var url=this._baseUrl.baseUrl+"updateQuestionFile/"+id;
+    return this._http.post(url,formData);
+  }
+
 }

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { SnackbarHelperService } from 'src/app/_helpers/snackbar-helper/snackbar-helper.service';
 import { ChapterService } from 'src/app/_services/chapterServices/chapter.service';
 import { QuestionAnswerService } from 'src/app/_services/questionAnswerService/question-answer.service';
 import { QuestionFilesService } from 'src/app/_services/questionFilesService/question-files.service';
+import { UpdateQuestionFilesComponent } from '../update-question-files/update-question-files.component';
 
 @Component({
   selector: 'app-upload-question-files',
@@ -12,7 +14,10 @@ import { QuestionFilesService } from 'src/app/_services/questionFilesService/que
 })
 export class UploadQuestionFilesComponent implements OnInit {
 
-  constructor(private _activateRouter:ActivatedRoute,private _chapter:ChapterService,
+  constructor(
+    private _activateRouter:ActivatedRoute,
+    private _chapter:ChapterService,
+    public dialog: MatDialog,
     private _shs:SnackbarHelperService,
     private _qas:QuestionAnswerService,
     private _qfs:QuestionFilesService) { }
@@ -101,6 +106,23 @@ export class UploadQuestionFilesComponent implements OnInit {
         this.progressBarStop();
     })
   }
+
+
+    //UPLOAD FILE
+    updateQuestionFile(id:any) {
+      //console.log(id);
+      const dialogRef = this.dialog.open(UpdateQuestionFilesComponent,{
+        width: '400px',
+        data: {questionFileId: id},
+      });
+    
+      dialogRef.afterClosed().subscribe(result => {
+        this.getQuestionsFilesByQuestionAnswerId();
+      });
+    
+    }
+    
+
 
 
 

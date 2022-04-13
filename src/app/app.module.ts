@@ -57,6 +57,7 @@ import { UploadFileBranchComponent } from './pages/category/branch/upload-file-b
 import { UploadFileChapterComponent } from './pages/category/chapters/upload-file-chapter/upload-file-chapter.component';
 import { UploadFileQuestionSetComponent } from './pages/category/question-set/upload-file-question-set/upload-file-question-set.component';
 import { UploadQuestionFilesComponent } from './pages/category/questions-files/upload-question-files/upload-question-files.component';
+import { UpdateQuestionFilesComponent } from './pages/category/questions-files/update-question-files/update-question-files.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { UploadQuestionFilesComponent } from './pages/category/questions-files/u
     UploadFileChapterComponent,
     UploadFileQuestionSetComponent,
     UploadQuestionFilesComponent,
+    UpdateQuestionFilesComponent,
   ],
   imports: [
     BrowserModule,

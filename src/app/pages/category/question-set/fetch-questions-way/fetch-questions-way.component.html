@@ -130,15 +130,23 @@
                       </p>
                     </a>
 
-                    <a mat-raised-button target="_blank" style="background-color: #58D68D;"
+                    <a mat-raised-button target="_blank" style="background-color: #ABEBC6;"
                      [routerLink]="'/dashboard/updateQuestionAnswer/'+node.id">
                     updateQuestion
                     </a>
 
-                    <a mat-raised-button target="_blank" style="background-color: #FF7F50;margin-left: 10px;"
+                    <a mat-raised-button target="_blank" style="background-color: #D7BDE2;margin-left: 10px;"
                      [routerLink]="'/dashboard/updateQuestionAnswer/'+node.id">
                       Answer = {{node.ansNameKey}}
                     </a>
+
+                    <a mat-raised-button target="_blank" style="background-color: #FCF3CF;margin-left: 10px;margin-top: 10px;"
+                    [routerLink]="'/dashboard/uploadQuestionFiles/'+node.id">
+                     Upload Files
+                   </a>
+
+
+                   
 
                   </div>
                 </div>
