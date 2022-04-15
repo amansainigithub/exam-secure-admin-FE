@@ -35,6 +35,7 @@ export class BootomCategoryComponent implements OnInit {
       "storingDateTime": "",
       "sequenceNum": "",
       "subCategoryCloneId":"",
+      "bgColor":"" ,
       "subCategoryModel":{
         "id":""
       },

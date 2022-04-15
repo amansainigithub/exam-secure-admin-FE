@@ -45,6 +45,7 @@ export class QuestionSetComponent implements OnInit {
     "experience":"",
     "paragraph":"",
     "title":"",
+    "bgColor":"",
     "chaptersModel":{
       "id":""
     },

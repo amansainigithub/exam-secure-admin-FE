@@ -38,6 +38,7 @@ export class ChapterComponent implements OnInit {
     "storingDateTime": "",
     "sequenceNum": "",
     "bottomCategoryCloneId":"",
+    "bgColor":"" ,
     "branchModel":{
       "id":""
     },

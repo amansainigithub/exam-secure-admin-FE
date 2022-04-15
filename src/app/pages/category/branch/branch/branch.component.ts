@@ -35,6 +35,7 @@ export class BranchComponent implements OnInit {
     "storingDateTime": "",
     "sequenceNum": "",
     "bottomCategoryCloneId":"",
+     "bgColor":"" ,
     "bottomCategoryModel":{
       "id":""
     },

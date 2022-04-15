@@ -34,6 +34,7 @@ export class SubCategoryComponent implements OnInit {
     "status": true,
     "storingDateTime": "",
     "sequenceNum": "",
+    "bgColor":"" ,
     "rootCategoryModel":{
         "id":""
     }

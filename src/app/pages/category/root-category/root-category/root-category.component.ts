@@ -27,7 +27,8 @@ export class RootCategoryComponent implements OnInit {
       "longDescription": "",
       "status": true,
       "storingDateTime": "",
-      "sequenceNum": ""
+      "sequenceNum": "",
+      "bgColor":""
   }
 
 
