@@ -162,12 +162,17 @@
                     <!-- //ANSWER //-->
 
                     <!-- >Question Solution -->
-                      <div class="form-group mt-3">
-                        <label class="text-primary  font-weight-bolder" >Question Solution</label>
-                        <textarea class="form-control" 
-                         placeholder="Long description"
-                         [(ngModel)]="questionAnswerForm.solution" name="solution"
-                          rows="4"></textarea>
+                      <div class="mt-4 border border-dark rounded p-3">
+                        <div class="form-group mt-3">
+                          <label class="text-primary  font-weight-bolder" >Question Solution</label>
+                          <textarea class="form-control" 
+                           placeholder="Long description"
+                           [(ngModel)]="questionAnswerForm.solution" name="solution"
+                            rows="4"></textarea>
+                        </div>
+  
+                        <label class="text-primary  font-weight-bolder" >Question Solution INNER HTML</label>
+                        <div [innerHTML]="questionAnswerForm.solution"></div>
                       </div>
 
 

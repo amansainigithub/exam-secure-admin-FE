@@ -58,6 +58,7 @@ import { UploadFileChapterComponent } from './pages/category/chapters/upload-fil
 import { UploadFileQuestionSetComponent } from './pages/category/question-set/upload-file-question-set/upload-file-question-set.component';
 import { UploadQuestionFilesComponent } from './pages/category/questions-files/upload-question-files/upload-question-files.component';
 import { UpdateQuestionFilesComponent } from './pages/category/questions-files/update-question-files/update-question-files.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { UpdateQuestionFilesComponent } from './pages/category/questions-files/u
     MatNativeDateModule ,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    CKEditorModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

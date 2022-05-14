@@ -2,8 +2,21 @@
 <div class="pB"  *ngIf="progressBar.dynamicValue" >
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
    </div>
-  
-  
+
+
+   <!-- //GRAB IMAGE TEXT -->
+<div class="mx-3">
+
+   <a  class="mt-2" style="position: fixed;z-index: 99999999999999999999999999;"
+      mat-raised-button color="accent" 
+      href="https://keep.google.com/u/0/#home"
+      target="_blank">
+      GRAB IMAGE TEXT
+  </a>
+
+</div>
+
+
   
   <div class="container mt-5">
   
@@ -95,13 +108,22 @@
 
                   <div class="form-row mt-5">
   
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <label class="text-primary font-weight-bolder" >Question Content</label>
                       <textarea class="form-control" 
                       placeholder="short description" 
                       [(ngModel)]="questionAnswerForm.question" name="question"
                       rows="3"></textarea>
-                    </div>
+                    </div> -->
+
+                    <div class="col-12">
+                      <label class="text-primary  font-weight-bolder" >Question Content</label>
+                      <ckeditor 
+                        [editor]="Editor" 
+                        [(ngModel)]="questionAnswerForm.question"
+                        name="question">
+                      </ckeditor>
+                     </div>
                   
   
                     <div class="col-12 mt-3">
@@ -210,13 +232,24 @@
                     <!-- //ANSWER //-->
 
                     <!-- >Question Solution -->
-                      <div class="form-group mt-3">
+                      <!-- <div class="form-group mt-3">
                         <label class="text-primary  font-weight-bolder" >Question Solution</label>
                         <textarea class="form-control" 
                          placeholder="Long description"
                          [(ngModel)]="questionAnswerForm.solution" name="solution"
                           rows="4"></textarea>
+                      </div> -->
+
+                      <div class="form-group mt-3">
+                        <label class="text-primary  font-weight-bolder" >Question Solution</label>
+                        <ckeditor 
+                          [editor]="Editor" 
+                          [(ngModel)]="questionAnswerForm.solution"
+                          name="solution">
+                        </ckeditor>
                       </div>
+
+                    
 
 
                         <!-- DESCRIPTION -->

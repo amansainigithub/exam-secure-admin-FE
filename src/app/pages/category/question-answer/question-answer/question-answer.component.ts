@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 import { SnackbarHelperService } from 'src/app/_helpers/snackbar-helper/snackbar-helper.service';
 import { BranchService } from 'src/app/_services/branchServices/branch.service';
 import { BottomCategoryService } from 'src/app/_services/categoryServices/bottom-category.service';
@@ -8,12 +9,16 @@ import { ChapterService } from 'src/app/_services/chapterServices/chapter.servic
 import { QuestionAnswerService } from 'src/app/_services/questionAnswerService/question-answer.service';
 import { QuestionSetService } from 'src/app/_services/questionSetServices/question-set.service';
 
+
+declare var Tesseract:any;
 @Component({
   selector: 'app-question-answer',
   templateUrl: './question-answer.component.html',
   styleUrls: ['./question-answer.component.css']
 })
 export class QuestionAnswerComponent implements OnInit {
+
+  public Editor = ClassicEditorBuild;
 
   constructor(private _chapter:ChapterService,
     private _bcs:BottomCategoryService,
@@ -265,11 +270,7 @@ selectAnswerNameKey(e:any)
                 this.progressBarStop();
               
             })
-  
   }
-
-
-
 
   //PROGRESS BAR START_STOP
   progressBarStart()
