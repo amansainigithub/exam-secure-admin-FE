@@ -59,6 +59,7 @@ import { UploadFileQuestionSetComponent } from './pages/category/question-set/up
 import { UploadQuestionFilesComponent } from './pages/category/questions-files/upload-question-files/upload-question-files.component';
 import { UpdateQuestionFilesComponent } from './pages/category/questions-files/update-question-files/update-question-files.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/save-file-resource/save-file-resource.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UploadFileQuestionSetComponent,
     UploadQuestionFilesComponent,
     UpdateQuestionFilesComponent,
+    SaveFileResourceComponent,
   ],
   imports: [
     BrowserModule,

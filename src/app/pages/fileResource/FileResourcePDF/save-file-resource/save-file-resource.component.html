@@ -1,0 +1,80 @@
+
+<div class="container">
+
+    <div class="mx-auto">
+
+        <div class="card mx-auto border border-0 p-3" style="max-width: 26rem;">
+
+           <div class="bg-light mb- 4 mt-4">
+            <h4 class="text-center font-weight-bold text-primary mt-3 ">Upload Resource File</h4>
+           </div>
+
+            <form >
+                <div class="form-group">
+                  <div class="text-center">
+                    <input multiple (change)="selectFile($event) "type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div>
+                  <br>
+                  <div class="text-center">
+                    <button (click)="uploadFile()" mat-raised-button color="primary">UPLOAD</button>
+                  </div>
+                </div>
+              </form>
+
+                  <!-- PROGRESS BAR -->
+                    <div class="pB mb-3"  *ngIf="progressBar.dynamicValue" >
+                        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                    </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TABLE -->
+<div class="container mt-5">
+    <button mat-button style="background-color: #AED6F1;" >FILE RESOURCE LIST</button>
+    <table class="table table-sm table-hover">
+        <thead class="cardHeaderColor">
+          <tr class="text-center">
+            <th scope="col">id</th>
+            <th scope="col">FileName</th>
+            <th scope="col">url</th>
+            <th scope="col">file</th>
+            <th scope="col">fileResourceType</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let node of fileResourceList; let i = index">
+            <th scope="row">{{node.id}}</th>
+            <td>{{node.fileName}}</td>
+            <td>{{node.url}}</td>
+           
+            <td>
+                <div  *ngIf="node.url != '' ">
+                  <img src="{{node.url}}"  alt="File" height="50">
+                </div>
+    
+                <div *ngIf="node.url == ''">
+                  <i class="bi bi-image-fill" style="color: #FFBF00;"></i >
+                </div>
+            </td>
+
+            <td>{{node.fileResourceType}}</td>
+
+
+            <!-- <td>
+              <button mat-raised-button class="uploadFile" (click)="updateQuestionFile(node.id)" >
+                <i class="bi bi-camera-fill"   style="font-size: 18px;" ></i>
+                update-File
+              </button>
+             </td>
+
+            <td>
+                <button (click)="deleteQuestionFileById(node.id)" class="button"><span>Remove </span></button>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+</div>
