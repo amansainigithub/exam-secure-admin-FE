@@ -35,6 +35,8 @@ import { UpdateQuestionAnswerComponent } from './pages/category/question-answer/
 import { UploadFileRootCategoryComponent } from './pages/category/root-category/upload-file-root-category/upload-file-root-category.component';
 import { UploadQuestionFilesComponent } from './pages/category/questions-files/upload-question-files/upload-question-files.component';
 import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/save-file-resource/save-file-resource.component';
+import { QuestionsListComponent } from './pages/category/question-answer/questions-list/questions-list.component';
+import { RootToEndComponent } from './pages/rootToEnd/root-to-end/root-to-end.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -124,6 +126,12 @@ const routes: Routes = [
         },
         {
           path: 'saveFileResource', component: SaveFileResourceComponent 
+        },
+        {
+          path: 'questionList', component: QuestionsListComponent
+        },
+        {
+          path: 'rootToEnd', component:RootToEndComponent
         }
 
         

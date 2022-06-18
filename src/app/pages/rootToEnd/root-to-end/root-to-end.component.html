@@ -1,0 +1,400 @@
+<div class="container mt-3">
+
+    <div class="pB"  *ngIf="progressBar.dynamicValue" >
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+       </div>
+
+   <div>
+        <form >
+            <div class="form-group mx-sm-3 mb-2">
+            <input  
+                (keypress)="searchKeyHit($event)"
+                type="text"  
+                class="form-control  form-control-sm" 
+                placeholder="Search Root">
+            </div>
+
+            <!-- <button type="submit"   class="btn  btn-sm btn-primary mb-2">Search Root</button> -->
+        </form>
+   </div>
+
+</div>
+
+<!-- ROOT BRANCH -->
+<div class="container mt-5">
+
+    <!-- ROW START -->
+    <div class="row">
+
+        <!-- ROOT BRANCH -->
+        <div class="col-sm-4">
+            <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Branch</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let node of searchList; let i = index">
+
+                    <th scope="row">
+                        {{node.id}}
+                    </th>
+                   
+                    <td>
+                        {{node.rootCategoryName}}
+                    </td>
+
+                    <td>
+                        <div class="container text-center mt-2">
+                            <button class="btn btn -sm btn-small bg-light" (click)="getSubBranch(node.id)" >
+                                <span class="brColor">
+                                    BRANCH<i  class="bi bi-alt"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>   
+        </div>
+                <!-- ROOT BRANCH END-->
+
+
+
+
+            <!-- SUB BRANCH -->
+            <div class="col-sm-8">
+                <div class="bg-light ">
+                    <h3 class="text-center brColor">SUB BRANCH</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 mb-3"   *ngFor="let node of subCategoryListBranch; let i = index">
+                        <div class="card bg-light" style="width: 10rem;">
+                            <div class="card-body">
+                              
+                                <p class="card-text text-center brColor font-weight-bold">
+                                    <i  class="bi bi-alt "></i> 
+                                    {{node.id}}
+                                </p>
+                                <p class="card-text text-center brColor font-weight-bold">
+                                    {{node.subCategoryName}}
+                                </p>
+
+                                <a mat-raised-button target="_blank" style="background-color: #ABEBC6;"
+                                    [routerLink]="'/dashboard/updateSubCategory/'+node.id">
+                                    Update Branch
+                                 </a>
+
+                             <div class="container text-center">
+                                <button class="btn btn -sm btn-small bg-light" (click)="getBottomBranch(node.id)" >
+                                    <span class="brColor">
+                                        BRANCH 
+                                        <i class="bi bi-bezier2 font-weight-bold"></i>
+                                    </span>
+                                </button>
+                             </div>
+
+                            </div>
+                          </div>
+                    </div>
+
+                    <div *ngIf="subCategoryListBranch == '' " class="col-sm-8">
+                            <h3 class="text-center brColor ">
+                                <i class="bi bi-exclamation-diamond-fill"></i>
+                                NO BRANCH FOUND
+                            </h3>
+                    </div>
+
+                </div>
+            </div>
+
+    <!-- SUB BRANCH ENDING-->
+
+
+
+
+
+         <!-- BOTTOM BRANCH -->
+         <div class="col-sm-12">
+            <div class="bg-light ">
+                <h3 class="text-center brColor">
+                     <i class="bi bi-bezier2"></i>
+                      BOTTOM BRANCH
+                 </h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 mb-3"   *ngFor="let node of bottomBranch; let i = index">
+                    <div class="card bg-light" style="width: 13rem;">
+                        <div class="card-body">
+                          
+                            <p class="card-text text-center brColor font-weight-bold">
+                                <i  class="bi bi-alt "></i> 
+                                {{node.id}}
+                            </p>
+                            <p class="card-text text-center brColor font-weight-bold">
+                                {{node.bottomCategoryName}}
+                            </p>
+
+                            <div class="container text-center mb-2">
+                                <a mat-raised-button target="_blank" style="background-color: #ABEBC6;text-align: center;"
+                                    [routerLink]="'/dashboard/updateBottomCategory/'+node.id">
+                                    Update Branch
+                                </a>
+                             </div>
+
+                             <div class="container text-center">
+                                <button class="btn btn -sm btn-small bg-light" (click)="getBranchByBottomCategoryId(node.id)" >
+                                    <span class="brColor">
+                                        BRANCH 
+                                        <i class="bi bi-bezier2 font-weight-bold"></i>
+                                    </span>
+                                </button>
+                             </div>
+                           
+
+                        </div>
+                      </div>
+                </div>
+
+                <div *ngIf="bottomBranch == '' " class="col-sm-12">
+                        <h3 class="text-center brColor ">
+                            <i class="bi bi-exclamation-diamond-fill"></i>
+                            NO BRANCH FOUND
+                        </h3>
+                </div>
+
+            </div>
+        </div>
+<!-- BOTTOM BRANCH ENDING-->
+
+
+
+
+  <!-- BRANCH BRANCH...[]-->
+  <div class="col-sm-12">
+    <div class="bg-light ">
+        <h3 class="text-center brColor">
+             <i class="bi bi-bezier2"></i>
+              BRANCH  BR..[]
+         </h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 mb-3"   *ngFor="let node of branchList; let i = index">
+            <div class="card bg-light" style="width: 13rem;">
+                <div class="card-body">
+                  
+                    <p class="card-text text-center brColor font-weight-bold">
+                        <i  class="bi bi-alt "></i> 
+                        {{node.id}}
+                    </p>
+                    <p class="card-text text-center brColor font-weight-bold">
+                        {{node.branchName}}
+                    </p>
+
+                   <div class="container text-center mb-2">
+                    <a mat-raised-button target="_blank" style="background-color: #ABEBC6;"
+                    [routerLink]="'/dashboard/updateBranch/'+node.id">
+                    Update Branch
+                 </a>
+                   </div>
+
+                    <div class="container text-center">
+                        <button class="btn btn -sm btn-small bg-light" (click)="getChapterListByBranchId(node.id)" >
+                            <span class="brColor">
+                                BRANCH 
+                                <i class="bi bi-bezier2"></i>
+                                <i class="bi bi-gear-wide-connected text-dark"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+              </div>
+        </div>
+
+        <div *ngIf="bottomBranch == '' " class="col-sm-12">
+                <h3 class="text-center brColor ">
+                    <i class="bi bi-exclamation-diamond-fill"></i>
+                    NO BRANCH FOUND
+                </h3>
+        </div>
+
+    </div>
+</div>
+
+<!-- BRANCH ENDING-->
+
+
+
+ <!-- CHAPTER BRANCH...-->
+ <div class="col-sm-12">
+    <div class="bg-light ">
+        <h3 class="text-center brColor">
+             <i class="bi bi-bezier2"></i>
+              CHAPTER  BRANCH
+         </h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 mb-3"   *ngFor="let node of chapterList; let i = index">
+            <div class="card bg-light" style="width: 15rem;">
+                <div class="card-body">
+                  
+                    <p class="card-text text-center brColor font-weight-bold">
+                        <i  class="bi bi-alt "></i> 
+                        {{node.id}}
+                    </p>
+                    <p class="card-text text-center brColor font-weight-bold">
+                        {{node.chapterName}}
+                    </p>
+
+                  <div class="container text-center mb-2">
+                        <a mat-raised-button target="_blank" style="background-color: #ABEBC6;"
+                            [routerLink]="'/dashboard/updateChapter/'+node.id">
+                            Update Branch
+                         </a>
+                  </div>
+
+                    <div class="container text-center">
+                        <button class="btn btn -sm btn-small bg-light" (click)="getQuestionSetByChapterId(node.id)" >
+                            <span class="brColor">
+                                BRANCH 
+                                <i class="bi bi-bezier2"></i>
+                                <i class="bi bi-gear-wide-connected text-dark"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+              </div>
+        </div>
+
+        <div *ngIf="bottomBranch == '' " class="col-sm-12">
+                <h3 class="text-center brColor ">
+                    <i class="bi bi-exclamation-diamond-fill"></i>
+                    NO BRANCH FOUND
+                </h3>
+        </div>
+
+    </div>
+</div>
+
+<!-- CHAPTER ENDING-->
+
+
+
+
+<!-- QUESTION-SET BRANCH...[]-->
+<div class="col-sm-12">
+    <div class="bg-light ">
+        <h3 class="text-center brColor">
+             <i class="bi bi-bezier2"></i>
+             QUESTION-SET  BRANCH
+         </h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 mb-3"   *ngFor="let node of questionSetList; let i = index">
+            <div class="card bg-light" style="width: 15rem;">
+                <div class="card-body">
+                  
+                    <p class="card-text text-center brColor font-weight-bold">
+                        <i  class="bi bi-alt "></i> 
+                        {{node.id}}
+                    </p>
+                    <p class="card-text text-center brColor font-weight-bold">
+                        {{node.questionSetName}}
+                    </p>
+
+                    <div class="container text-center mb-2">
+                        <a mat-raised-button target="_blank" style="background-color: #ABEBC6;"
+                        [routerLink]="'/dashboard/updateQuestionSet/'+node.id">
+                        Update Branch
+                    </a>
+                    </div>
+
+                    <div class="container text-center">
+                        <button class="btn btn -sm btn-small bg-light" (click)="getQuestionsAnswersByQuestionSetId(node.id)" >
+                            <span class="brColor">
+                                BRANCH 
+                                <i class="bi bi-bezier2"></i>
+                                <i class="bi bi-gear-wide-connected text-dark"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+              </div>
+        </div>
+
+        <div *ngIf="bottomBranch == '' " class="col-sm-12">
+                <h3 class="text-center brColor ">
+                    <i class="bi bi-exclamation-diamond-fill"></i>
+                    NO BRANCH FOUND
+                </h3>
+        </div>
+
+    </div>
+</div>
+
+<!--  QUESTION-SET  ENDING-->
+
+
+
+   <!-- Question-List BRANCH -->
+   <div class="container-fluid mt-5">
+
+    <div class="bg-light ">
+        <h3 class="text-center brColor">
+             <i class="bi bi-bezier2"></i>
+             QUESTION-LIST  BRANCH
+         </h3>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-4" *ngFor="let node of questionAnswerList">
+            <div class="card mt-4" style="background-color: #EAFAF1;">
+                <div class="card-body ">
+                  
+                    <a target="_blank" [routerLink]="'/dashboard/updateQuestionSet/'+node.id" >
+                        <p class="text-dark">
+                            <span style="font-size: 10px;margin-right: 3px;">{{node.id}} ]</span>
+                            <b>Q.</b>
+                            <span class="mr-2">{{node.question}}</span>
+                        </p>
+                    </a>
+
+                    <a mat-raised-button target="_blank" style="background-color: #ABEBC6;"
+                        [routerLink]="'/dashboard/updateQuestionAnswer/'+node.id">
+                        updateQuestion
+                    </a>
+
+                    <a mat-raised-button target="_blank" style="background-color: #D7BDE2;margin-left: 10px;"
+                        [routerLink]="'/dashboard/updateQuestionAnswer/'+node.id">
+                            Answer = {{node.ansNameKey}}
+                    </a>
+
+                    <a mat-raised-button target="_blank" style="background-color: #FCF3CF;margin-left: 10px;margin-top: 10px;"
+                        [routerLink]="'/dashboard/uploadQuestionFiles/'+node.id">
+                        Upload Files
+                    </a>
+
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+</div>
+     <!-- Question-List BRANCH Ending-->
+
+        
+
+    </div>
+</div>
+
+<!-- ROOT BRANCH -->
+
+

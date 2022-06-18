@@ -60,6 +60,9 @@ import { UploadQuestionFilesComponent } from './pages/category/questions-files/u
 import { UpdateQuestionFilesComponent } from './pages/category/questions-files/update-question-files/update-question-files.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/save-file-resource/save-file-resource.component';
+import { QuestionsListComponent } from './pages/category/question-answer/questions-list/questions-list.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { RootToEndComponent } from './pages/rootToEnd/root-to-end/root-to-end.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +106,8 @@ import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/
     UploadQuestionFilesComponent,
     UpdateQuestionFilesComponent,
     SaveFileResourceComponent,
+    QuestionsListComponent,
+    RootToEndComponent,
   ],
   imports: [
     BrowserModule,
@@ -124,6 +129,7 @@ import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/
     MatProgressSpinnerModule,
     MatDialogModule,
     CKEditorModule,
+    MatPaginatorModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
