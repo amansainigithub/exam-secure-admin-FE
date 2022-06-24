@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SnackbarHelperService } from 'src/app/_helpers/snackbar-helper/snackbar-helper.service';
 import { BranchService } from 'src/app/_services/branchServices/branch.service';
 import { BottomCategoryService } from 'src/app/_services/categoryServices/bottom-category.service';
+import { RootCategoryService } from 'src/app/_services/categoryServices/root-category.service';
+import { SubCategoryService } from 'src/app/_services/categoryServices/sub-category.service';
 import { ChapterService } from 'src/app/_services/chapterServices/chapter.service';
 import { QuestionSetService } from 'src/app/_services/questionSetServices/question-set.service';
 
@@ -16,12 +18,17 @@ export class QuestionSetComponent implements OnInit {
     private _bcs:BottomCategoryService,
     private _shs:SnackbarHelperService,
     private _branch:BranchService,
-    private _qs:QuestionSetService) { }
+    private _qs:QuestionSetService,
+    private _rcs:RootCategoryService,
+    private _scs:SubCategoryService,) { }
 
   ngOnInit(): void {
 
     //getAllBranch
-    this.getAllBranchList();
+   // this.getAllBranchList();
+
+    //Root
+    this.fetchRootCategoryData();
   }
 
   
@@ -52,25 +59,124 @@ export class QuestionSetComponent implements OnInit {
 }
 
 
-//getBranchList
-branchList:any;
-getAllBranchList()
-{
-//progress-bar-start
-this.progressBarStart();
+   //ROOT CATEGORY LIST
+   fetchRootCategory:any;
+   public fetchRootCategoryData()
+   {
+       //progress-bar-start
+       this.progressBarStart();
+ 
+       this._rcs.fetchRootCategoryService().subscribe(data=>{
+          this.fetchRootCategory=data;
+          console.log(data);
+           //progress-bar-stop
+           this.progressBarStop();
+       },error=>{
+           console.log(error);
+           //progress-bar-stop
+           this.progressBarStop();
+       })
+   }
+ 
+ 
+   //selectBottomCategory
+   selectRootCategory(e:any)
+   {
+    e.target.value;
+    this.getSubCategoriesByRootCategoryId(e.target.value);
+   }
+ 
+   subCategoryList:any;
+   getSubCategoriesByRootCategoryId(rootCategoryId:any)
+ {
+     //progress-bar-start
+       this.progressBarStart();
+ 
+         this._scs.getSubCategoriesByRootCategoryId(rootCategoryId).subscribe(data=>{
+         this.subCategoryList=data;
+         
+         console.log(data);
+           //progress-bar-stop
+           this.progressBarStop();
+       },error=>{
+           console.log(error);
+           //progress-bar-stop
+           this.progressBarStop();
+       })
+ }
+ 
+ 
+ selectSubCategory(e:any)
+ {
+   this.getBottomCategoriesBySubCategoryId(e.target.value);
+ }
+ 
+ 
+ 
+   bottomCategoryList:any;
+   public getBottomCategoriesBySubCategoryId(subCategoryId:any)
+   {
+       //progress-bar-start
+       this.progressBarStart();
+ 
+       this._bcs.getBottomCategoriesBySubCategoryId(subCategoryId).subscribe(data=>{
+          this.bottomCategoryList=data;
+          console.log(data);
+           //progress-bar-stop
+           this.progressBarStop();
+       },error=>{
+           console.log(error);
+           //progress-bar-stop
+           this.progressBarStop();
+       })
+   }
+ 
+ 
+ 
+   //selectBottomCategory
+   selectBottomCategory(e:any)
+   {
+    e.target.value;
+    this.selectBranchByBottomCategoryId(e.target.value);
+   }
 
-this._branch.getAllBranchService().subscribe(data=>{
-   this.branchList=data;
+   branchList:any;
+   selectBranchByBottomCategoryId(bottomCategoryId:any)
+   {
+       //progress-bar-start
+         this.progressBarStart();
    
-   console.log(data);
-    //progress-bar-stop
-    this.progressBarStop();
-},error=>{
-    console.log(error);
-    //progress-bar-stop
-    this.progressBarStop();
-})
-}
+           this._branch.getBranchListByBottomCategoryId(bottomCategoryId).subscribe(data=>{
+           this.branchList=data;
+           
+           console.log(data);
+             //progress-bar-stop
+             this.progressBarStop();
+         },error=>{
+             console.log(error);
+             //progress-bar-stop
+             this.progressBarStop();
+         })
+   }
+//getBranchList
+// branchList:any;
+// getAllBranchList()
+// {
+// //progress-bar-start
+// this.progressBarStart();
+
+// this._branch.getAllBranchService().subscribe(data=>{
+//    this.branchList=data;
+   
+//    console.log(data);
+//     //progress-bar-stop
+//     this.progressBarStop();
+// },error=>{
+//     console.log(error);
+//     //progress-bar-stop
+//     this.progressBarStop();
+// })
+// }
 
 
 selectBranchId(e:any)
