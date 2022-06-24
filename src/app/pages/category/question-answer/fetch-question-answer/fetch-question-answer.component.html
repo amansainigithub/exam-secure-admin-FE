@@ -24,7 +24,8 @@
             <th scope="col">option-3</th>
             <th scope="col">option-2</th>
             <th scope="col">status</th>
-            <th scope="col">Upload_Files</th>
+            <!-- <th scope="col">Upload_Files</th> -->
+            <th scope="col">FileURL</th>
             <th scope="col">seqNum</th>
             <th scope="col">update</th>
             <th scope="col">remove</th>
@@ -83,11 +84,15 @@
               <!-- {{node.status}} -->
           </td>
 
-          <td>
+          <!-- <td>
             <a mat-button [routerLink]="'/dashboard/uploadQuestionFiles/'+node.id"  >
               <i class="bi bi-camera-fill"   style="font-size: 18px;" ></i>
               upload-Files
             </a>
+          </td> -->
+
+          <td>
+            <img src="{{node.fileUrl}}" height="50" width="50" alt="">
           </td>
 
             <td>{{node.sequenceNum}}</td>
