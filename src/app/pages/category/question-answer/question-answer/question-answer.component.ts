@@ -215,6 +215,7 @@ export class QuestionAnswerComponent implements OnInit {
     "description": "",
     "solution":"",
     "ansKeyName":"",
+    "fileUrl":"",
     "questionSetsModel":{
       "id":""
     },

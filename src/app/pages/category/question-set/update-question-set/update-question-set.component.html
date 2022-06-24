@@ -8,6 +8,19 @@
   <div class="container mt-5">
   
       
+
+    <div>
+      <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank" mat-raised-button color="primary" style="position: fixed;">
+        <i class="bi bi-file-earmark-image"></i>
+        <span class="ml-2 mr-2"> Get Image URL</span>  
+        <i class="bi bi-link-45deg font-weight-bold"></i>
+      </a>
+      <!-- EXAMPLE : WHEN WE ARE USING==> <img src="https://drive.google.com/uc?export=view&id=1HlmbhSveW-WoX65NerHMaB4NPiU-Bs8j" alt=""> -->
+    
+    </div>
+
+    
+    
   
       <div class="card mx-auto" style="max-width: 50rem;margin-bottom: 100px;" >
           <div class="card-header cardHeaderColor">
@@ -146,6 +159,20 @@
                           </option>
                         </select>
                     </div>
+
+
+                    <div class="form-group mt-3">
+                      <label class="text-primary" > 
+                         <i class="bi bi-file-earmark-image"></i>
+                          File URL IF ANY
+                        </label>
+                      <input type="text"
+                      class="form-control"
+                      [(ngModel)]="questionSetForm.fileUrl" name="fileUrl"
+                        placeholder="fileUrl">
+                    </div>
+
+                    
 
                     <div class="col mt-3">
                       <label class="text-primary" >bg color</label>
