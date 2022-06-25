@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // const AUTH_API = 'http://localhost:5000/api/auth/';
-const AUTH_API = 'https://146.190.233.4:5000/api/public/auth/cred/';
+const AUTH_API = 'https://146.190.233.4:5000/api/auth/';
 // const AUTH_API = 'http://examsecure-env.eba-3xmk9bvg.us-east-1.elasticbeanstalk.com/api/auth/';
 
 
