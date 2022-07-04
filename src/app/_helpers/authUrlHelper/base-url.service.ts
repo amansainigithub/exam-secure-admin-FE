@@ -12,3 +12,4 @@ export class BaseUrlService {
 
   constructor() { }
 }
+ 
