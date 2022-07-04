@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'http://localhost:5000/api/auth/';
-// const AUTH_API = 'https://146.190.233.4:5000/api/auth/';
-// const AUTH_API = 'http://examsecure-env.eba-3xmk9bvg.us-east-1.elasticbeanstalk.com/api/auth/';
+// const AUTH_API = 'http://localhost:8080/api/auth/';
+// const AUTH_API = 'http://103.93.16.121:33146/grabquiz/api/auth/';
+const AUTH_API = 'https://grabquiz.tech/api/auth/';
+
 
 
 const httpOptions = {
