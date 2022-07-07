@@ -63,6 +63,8 @@ import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/
 import { QuestionsListComponent } from './pages/category/question-answer/questions-list/questions-list.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { RootToEndComponent } from './pages/rootToEnd/root-to-end/root-to-end.component';
+import { WatchSetsComponent } from './pages/watchSets/watch-sets/watch-sets.component';
+import { WatchSetsByRootComponent } from './pages/watchSets/watch-sets-by-root/watch-sets-by-root.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +110,8 @@ import { RootToEndComponent } from './pages/rootToEnd/root-to-end/root-to-end.co
     SaveFileResourceComponent,
     QuestionsListComponent,
     RootToEndComponent,
+    WatchSetsComponent,
+    WatchSetsByRootComponent,
   ],
   imports: [
     BrowserModule,

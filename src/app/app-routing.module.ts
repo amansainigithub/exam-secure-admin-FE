@@ -37,6 +37,8 @@ import { UploadQuestionFilesComponent } from './pages/category/questions-files/u
 import { SaveFileResourceComponent } from './pages/fileResource/FileResourcePDF/save-file-resource/save-file-resource.component';
 import { QuestionsListComponent } from './pages/category/question-answer/questions-list/questions-list.component';
 import { RootToEndComponent } from './pages/rootToEnd/root-to-end/root-to-end.component';
+import { WatchSetsComponent } from './pages/watchSets/watch-sets/watch-sets.component';
+import { WatchSetsByRootComponent } from './pages/watchSets/watch-sets-by-root/watch-sets-by-root.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -132,6 +134,12 @@ const routes: Routes = [
         },
         {
           path: 'rootToEnd', component:RootToEndComponent
+        },
+        {
+          path: 'watchSets', component:WatchSetsComponent
+        },
+        {
+          path: 'watchSetsByRoot/:id', component:WatchSetsByRootComponent
         }
 
         

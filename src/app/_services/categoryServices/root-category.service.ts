@@ -44,4 +44,12 @@ export class RootCategoryService {
     var url=this._baseUrl.baseUrl+"uploadRootCategoryFile/"+id;
     return this._http.post(url,formData);
   }
+
+
+  getAllSetsByRootId(rootId:any)
+  { console.log("ok");
+    return this._http.get(this._baseUrl.baseUrl+"getAllSetsByRootId/"+rootId);
+  }
+
+
 }

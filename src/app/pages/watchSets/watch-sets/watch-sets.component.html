@@ -1,0 +1,77 @@
+<!-- PROGRESS BAR -->
+<div class="pB"  *ngIf="progressBar.dynamicValue" >
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+   </div>
+
+
+
+<div class="container-fluid mx-2 mt-3">
+
+
+
+  <div class="row">
+
+
+              <div class="col-sm-3">
+                <table class="table table-sm table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">RootName</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">WATCH</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let node of rootData; let i = index">
+                      <th scope="row">{{node.id}}</th>
+                      <td>{{node.rootCategoryName}}</td>
+                      <td>{{node.status}}</td>
+                      <td>
+                        <button type="button" class="btn btn-sm bg-light" (click)="getSetsByRoot(node.id)" >
+                           Watch Sets
+                      </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+
+
+
+
+                <div class="col-sm-8">
+
+                  <table class="table table-sm table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Q-Sets-name</th>
+                        <th scope="col">WATCH</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let node of questionSetsLast; let i = index">
+                        <th scope="row">{{node.id}}</th>
+                        <td>{{node.questionSetName}}</td>
+                        <td>
+                          <button type="button" class="btn btn-sm bg-light" (click)="getSetsByRoot(node.id)" >
+                             Watch Sets
+                        </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+
+  </div>
+
+
+
+</div>
