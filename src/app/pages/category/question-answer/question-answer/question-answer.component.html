@@ -21,6 +21,23 @@
 </a>
 </div>
 
+<div style="margin-top: 1600px;position: absolute;">
+  <textarea name="" id="" cols="35" rows="12">
+    
+    <span class="bg-light p-2 rounded ">
+        value
+      </span><br/>
+      
+      <div  class="ml-1 mt-3">
+        <span class="bg-light p-2 rounded ml-5">
+          value
+        </span>
+      </div>
+
+  </textarea>
+</div>
+
+
 
   
   <div class="container mt-5">
@@ -232,37 +249,42 @@
 
                         <!-- OPTION 1 AND OPTION 2 -->
                         <div  class="form-row mt-2">
+
                             <div class="col-6">
                               <label class="text-primary font-weight-bolder" >Option (a)</label>
-                              <input type="text"
-                              class="form-control"
-                              [(ngModel)]="questionAnswerForm.option1" name="option1" 
-                                placeholder="option 1">
+                              <textarea 
+                                  class="form-control"
+                                  [(ngModel)]="questionAnswerForm.option1" name="option1" 
+                                    placeholder="option 1" rows="6"> 
+                              </textarea>
                             </div>
 
                             <div class="col-6">
                               <label class="text-primary font-weight-bolder" >Option (b)</label>
-                              <input type="text"
-                              class="form-control"
-                              [(ngModel)]="questionAnswerForm.option2" name="option2"
-                                placeholder="option 2">
+                              <textarea
+                                class="form-control"
+                                [(ngModel)]="questionAnswerForm.option2" name="option2"
+                                  placeholder="option 2" rows="6">
+                              </textarea>
                             </div>
 
-                            <!-- OPTION 3 AND OPTION 3 -->
+                            <!-- OPTION 3 AND OPTION 4 -->
                           <div class="col-6 mt-3">
                             <label class="text-primary font-weight-bolder" >Option (c)</label>
-                            <input type="text"
-                            class="form-control"
-                            [(ngModel)]="questionAnswerForm.option3" name="option3"
-                              placeholder="option 3">
+                            <textarea 
+                              class="form-control"
+                              [(ngModel)]="questionAnswerForm.option3" name="option3"
+                                placeholder="option 3"  rows="6">
+                              </textarea>
                           </div>
 
                           <div class="col-6 mt-3">
                             <label class="text-primary font-weight-bolder" >Option (d)</label>
-                            <input type="text"
+                            <textarea 
                             class="form-control"
                             [(ngModel)]="questionAnswerForm.option4" name="option4"
-                              placeholder="option 4">
+                              placeholder="option 4"  rows="6">
+                              </textarea>
                           </div>
                       </div>
 
