@@ -4,38 +4,36 @@
    </div>
 
 
-<div>
-  <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank" mat-raised-button color="primary" style="position: fixed;">
-      <i class="bi bi-file-earmark-image"></i>
-          <span class="ml-2 mr-2"> Get Image URL</span>  
-      <i class="bi bi-link-45deg font-weight-bold"></i>
-  </a>
-<!-- EXAMPLE : WHEN WE ARE USING==> <img src="https://drive.google.com/uc?export=view&id=1HlmbhSveW-WoX65NerHMaB4NPiU-Bs8j" alt=""> -->
-
-
-  <a href="https://nightly.ckeditor.com/22-07-11-06-04/full/samples/" target="_blank" 
-      mat-raised-button  style="position: fixed;margin-top: 50px;background-color: #F5CBA7;">
-      <i class="bi bi-body-text"></i>
-        <span class="ml-2 mr-2"> Text Editor</span>  
-    <i class="bi bi-link-45deg font-weight-bold"></i>
-</a>
-</div>
-
-<div style="margin-top: 1600px;position: absolute;">
-  <textarea name="" id="" cols="35" rows="12">
-    
-    <span class="bg-light p-2 rounded ">
-        value
-      </span><br/>
+<div class="container">
+      <div>
+        <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank" mat-raised-button color="primary" class="mx-4">
+            <i class="bi bi-file-earmark-image"></i>
+                <span class="ml-2 mr-2"> Get Image URL</span>  
+            <i class="bi bi-link-45deg font-weight-bold"></i>
+        </a>
+      <!-- EXAMPLE : WHEN WE ARE USING==> <img src="https://drive.google.com/uc?export=view&id=1HlmbhSveW-WoX65NerHMaB4NPiU-Bs8j" alt=""> -->
       
-      <div  class="ml-1 mt-3">
-        <span class="bg-light p-2 rounded ml-5">
-          value
-        </span>
+        <a href="https://nightly.ckeditor.com/22-07-11-06-04/full/samples/" target="_blank" 
+            mat-raised-button  style="margin-top: 50px;background-color: #F5CBA7;">
+            <i class="bi bi-body-text"></i>
+              <span class="ml-2 mr-2"> Text Editor</span>  
+          <i class="bi bi-link-45deg font-weight-bold"></i>
+      </a>
       </div>
-
-  </textarea>
 </div>
+
+<ul class="list-group" style="margin-top: 1600px;position: absolute;font-size: 14px;">
+  <li class="list-group-item">CompileTimeError</li>
+  <li class="list-group-item">RunTimeError</li>
+  <li class="list-group-item">None of these</li>
+  <li class="list-group-item">CompilationError</li>
+  <li class="list-group-item">Compile-Time-Error</li>
+  <li class="list-group-item">StackOverFlow Error</li>
+  <li class="list-group-item">NullPointerException</li>
+  <li class="list-group-item">Compile-Time-Error</li>
+  <li class="list-group-item">syntax Error</li>
+  <li class="list-group-item">Program Compile but not run</li>
+</ul>
 
 
 
@@ -252,39 +250,39 @@
 
                             <div class="col-6">
                               <label class="text-primary font-weight-bolder" >Option (a)</label>
-                              <textarea 
+                              <input  type="text"
                                   class="form-control"
                                   [(ngModel)]="questionAnswerForm.option1" name="option1" 
-                                    placeholder="option 1" rows="6"> 
-                              </textarea>
+                                    placeholder="option 1" rows="6" /> 
+                            
                             </div>
 
                             <div class="col-6">
                               <label class="text-primary font-weight-bolder" >Option (b)</label>
-                              <textarea
+                              <input  type="text"
                                 class="form-control"
                                 [(ngModel)]="questionAnswerForm.option2" name="option2"
-                                  placeholder="option 2" rows="6">
-                              </textarea>
+                                  placeholder="option 2" rows="6" />
+                             
                             </div>
 
                             <!-- OPTION 3 AND OPTION 4 -->
                           <div class="col-6 mt-3">
                             <label class="text-primary font-weight-bolder" >Option (c)</label>
-                            <textarea 
+                            <input  type="text"
                               class="form-control"
                               [(ngModel)]="questionAnswerForm.option3" name="option3"
-                                placeholder="option 3"  rows="6">
-                              </textarea>
+                                placeholder="option 3"  rows="6" />
+                              
                           </div>
 
                           <div class="col-6 mt-3">
                             <label class="text-primary font-weight-bolder" >Option (d)</label>
-                            <textarea 
+                            <input  type="text"
                             class="form-control"
                             [(ngModel)]="questionAnswerForm.option4" name="option4"
-                              placeholder="option 4"  rows="6">
-                              </textarea>
+                              placeholder="option 4"  rows="6" />
+                            
                           </div>
                       </div>
 
